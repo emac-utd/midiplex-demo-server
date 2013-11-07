@@ -17,21 +17,20 @@ function udpStream(socket) {
 }
 var mp = new Midiplex()
 
-var noteSocket = udpSocket()
+var modSocketX = udpSocket()
 var velSocket = udpSocket()
-var modSocket = udpSocket()
+var modSocketY = udpSocket()
 
-var noteStream = udpStream(noteSocket)
+var modXStream = udpStream(modSocketX)
 var velStream = udpStream(velSocket)
-var modStream = udpStream(modSocket)
+var modYStream = udpStream(modSocketY)
 
-mp.addNoteStream(noteStream, {maxVal: 200})
+mp.addControllerStream(modXStream, {maxVal: 127, controller: 1})
 //mp.setVelocityStream(velStream, {maxVal: 200})
-mp.addControllerStream(modStream, {maxVal: 200, maxOut: 100})
+mp.addControllerStream(modYStream, {maxVal: 127, controller: 2})
 
-noteSocket.bind(9001)
-velSocket.bind(9002)
-modSocket.bind(9003)
+modSocketX.bind(9001)
+modSocketY.bind(9002)
 
 var output = new midi.output()
 console.log(output.getPortName(1))
