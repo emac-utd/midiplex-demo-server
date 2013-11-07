@@ -2,10 +2,9 @@
   "name": "midiplex-demo-server",
   "private": true,
   "description": "Demo to turn mulitple data inputs into a single midi output",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": { "node": ">=0.10.0" },
   "dependencies": {
-    "event-stream": "3.0.x",
     "midi": "0.7.x",
     "through": "2.3.x",
     "midiplex": "0.1.x"
