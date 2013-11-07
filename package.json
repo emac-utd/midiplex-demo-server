@@ -7,7 +7,7 @@
   "dependencies": {
     "midi": "0.7.x",
     "through": "2.3.x",
-    "midiplex": "0.1.x"
+    "midiplex": "0.2.x"
   },
   "devDependencies": {
   },
