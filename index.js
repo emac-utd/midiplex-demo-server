@@ -21,4 +21,7 @@ var output = new midi.output()
 console.log(output.getPortName(0))
 output.openPort(0)
 var midiStream = midi.createWriteStream(output)
-mp.getReadableStream().pipe(midiStream)
+
+mp.on('readable', function(){
+  mp.getReadableStream().pipe(midiStream)
+})
